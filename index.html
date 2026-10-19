@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>广州早茶漫游指南 · 一盅两件</title>
+<meta name="description" content="用一盅两件，带你在滑动与点击中漫游广州老城">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 音频：盖碗揭盖音效（用 WebAudio 合成，无需外部文件） -->
+<div id="app">
+
+  <!-- ============ P1 封面 ============ -->
+  <section class="page page-cover" data-page="1">
+    <div class="steam steam-1"></div>
+    <div class="steam steam-2"></div>
+    <div class="steam steam-3"></div>
+    <div class="cover-bg parallax" data-depth="0.06"></div>
+    <div class="cover-inner">
+      <div class="brand">一盅两件</div>
+      <h1 class="cover-title">广州早茶<br>漫游指南</h1>
+      <p class="cover-sub">九十秒，带你推门入一间老茶楼</p>
+      <div class="scroll-hint">
+        <span>向上推门</span>
+        <i class="arrow-down"></i>
+      </div>
+    </div>
+    <div class="page-tag">P1</div>
+  </section>
+
+  <!-- ============ P2 推门入店 ============ -->
+  <section class="page page-door" data-page="2">
+    <div class="door-scene">
+      <div class="door-left"></div>
+      <div class="door-right"></div>
+      <div class="door-glow"></div>
+    </div>
+    <div class="door-text">
+      <h2>推门而入</h2>
+      <p>木门吱呀一声，茶香先到。<br>阿姐喊一声「饮茶啦」，一天才算开始。</p>
+      <div class="drag-tip">↑ 向上拖开这扇门</div>
+    </div>
+    <div class="page-tag">P2</div>
+  </section>
+
+  <!-- ============ P3 时间线（滑动交互） ============ -->
+  <section class="page page-timeline" data-page="3">
+    <div class="page-head">
+      <h2>一日的茶事</h2>
+      <p>滑动横轴，看广州人的一天</p>
+    </div>
+    <div class="timeline-wrap">
+      <div class="timeline-track" id="timelineTrack">
+        <div class="timeline-progress" id="timelineProgress"></div>
+        <div class="tl-node" data-x="0"><i></i><b>5:00</b><span>烧水候位</span></div>
+        <div class="tl-node" data-x="16"><i></i><b>7:00</b><span>叹一盅两件</span></div>
+        <div class="tl-node" data-x="33"><i></i><b>9:00</b><span>街坊倾计</span></div>
+        <div class="tl-node" data-x="50"><i></i><b>11:00</b><span>翻台依旧</span></div>
+        <div class="tl-node" data-x="66"><i></i><b>14:00</b><span>下午茶点</span></div>
+        <div class="tl-node" data-x="83"><i></i><b>17:00</b><span>夜茶开锣</span></div>
+        <div class="tl-node" data-x="100"><i></i><b>20:00</b><span>茶淡人散</span></div>
+      </div>
+      <div class="tl-card" id="tlCard">
+        <b id="tlTime">7:00</b>
+        <p id="tlDesc">虾饺烧卖落单，一盅普洱滚水冲开，是老广最踏实的早餐。</p>
+      </div>
+    </div>
+    <div class="page-tag">P3</div>
+  </section>
+
+  <!-- ============ P4 一盅两件（点击交互） ============ -->
+  <section class="page page-dimsum" data-page="4">
+    <div class="page-head">
+      <h2>一盅两件</h2>
+      <p>点击点心，看看它们的小脾气</p>
+    </div>
+    <div class="dimsum-stage">
+      <div class="ds-card" data-name="虾饺" data-desc="皮薄透亮，十一褶是老师傅的门槛，咬开满口鲜虾。">
+        <div class="ds-emoji">🥟</div><span>虾饺</span>
+      </div>
+      <div class="ds-card" data-name="烧卖" data-desc="半肥瘦猪肉打起胶，顶上点一颗蟹籽，咸香弹牙。">
+        <div class="ds-emoji">🍥</div><span>烧卖</span>
+      </div>
+      <div class="ds-card" data-name="叉烧包" data-desc="老面开花三瓣，蒸到咧嘴，甜咸酱香最抚人心。">
+        <div class="ds-emoji">🍙</div><span>叉烧包</span>
+      </div>
+      <div class="ds-card" data-name="肠粉" data-desc="米浆薄铺蒸屉，撒虾仁牛肉，淋上甜酱油一拖一卷。">
+        <div class="ds-emoji">🫔</div><span>肠粉</span>
+      </div>
+      <div class="ds-card" data-name="蛋挞" data-desc="酥皮层层起酥，蛋液嫩滑，趁热吃才有爆浆感。">
+        <div class="ds-emoji">🥧</div><span>蛋挞</span>
+      </div>
+      <div class="ds-card" data-name="凤爪" data-desc="先炸后蒸，酱汁软糯脱骨，饮茶必点之一。">
+        <div class="ds-emoji">🍗</div><span>豉汁凤爪</span>
+      </div>
+    </div>
+    <div class="page-tag">P4</div>
+  </section>
+
+  <!-- ============ P5 点单（点击交互） ============ -->
+  <section class="page page-order" data-page="5">
+    <div class="page-head">
+      <h2>点一笼试试</h2>
+      <p>点选你想吃的，算算这一顿</p>
+    </div>
+    <div class="order-list">
+      <div class="od-item" data-price="28"><span>虾饺</span><b>¥28</b><i class="od-btn">＋</i></div>
+      <div class="od-item" data-price="22"><span>烧卖</span><b>¥22</b><i class="od-btn">＋</i></div>
+      <div class="od-item" data-price="20"><span>叉烧包</span><b>¥20</b><i class="od-btn">＋</i></div>
+      <div class="od-item" data-price="18"><span>肠粉</span><b>¥18</b><i class="od-btn">＋</i></div>
+      <div class="od-item" data-price="12"><span>普洱</span><b>¥12</b><i class="od-btn">＋</i></div>
+    </div>
+    <div class="order-bar">
+      <span>已点 <em id="odCount">0</em> 样</span>
+      <b id="odTotal">¥0</b>
+    </div>
+    <div class="page-tag">P5</div>
+  </section>
+
+  <!-- ============ P6 冲泡（长按交互） ============ -->
+  <section class="page page-brew" data-page="6">
+    <div class="page-head">
+      <h2>揭盖·冲茶</h2>
+      <p>长按盖碗，揭开来，热气会自己升</p>
+    </div>
+    <div class="brew-stage">
+      <div class="brew-pot"></div>
+      <div class="brew-lid" id="brewLid"></div>
+      <div class="brew-steam" id="brewSteam"></div>
+      <div class="brew-tea"></div>
+      <div class="brew-progress"><i id="brewProgress"></i></div>
+    </div>
+    <div class="brew-tip" id="brewTip">长按盖碗揭盖</div>
+    <div class="page-tag">P6</div>
+  </section>
+
+  <!-- ============ P7 老茶客（点击切换） ============ -->
+  <section class="page page-people" data-page="7">
+    <div class="page-head">
+      <h2>一桌老茶客</h2>
+      <p>点击头像，听听他们的茶话</p>
+    </div>
+    <div class="people-stage">
+      <div class="pp-avatar active" data-quote="在茶楼坐一上午，饮的是茶，倾的是这几十年的老友。">
+        <div class="pp-face">👴</div><span>陈伯 · 72</span>
+      </div>
+      <div class="pp-avatar" data-quote="从细食到大，虾饺要十一褶，少一褶都觉得唔够正宗。">
+        <div class="pp-face">👵</div><span>芬姨 · 68</span>
+      </div>
+      <div class="pp-avatar" data-quote="我哋后生仔，周末约饮茶，倾完计先返工，精神晒。">
+        <div class="pp-face">🧑</div><span>阿杰 · 26</span>
+      </div>
+      <div class="pp-avatar" data-quote="做茶楼这行四十年，睇住几代人喺同一张台饮茶。">
+        <div class="pp-face">👨‍🍳</div><span>强哥 · 茶楼经理</span>
+      </div>
+    </div>
+    <div class="pp-quote" id="ppQuote">在茶楼坐一上午，饮的是茶，倾的是这几十年的老友。</div>
+    <div class="page-tag">P7</div>
+  </section>
+
+  <!-- ============ P8 图鉴（滑动） ============ -->
+  <section class="page page-album" data-page="8">
+    <div class="page-head">
+      <h2>点心图鉴</h2>
+      <p>左右滑动，翻一翻老茶楼的记忆</p>
+    </div>
+    <div class="album-wrap">
+      <div class="album-track" id="albumTrack">
+        <div class="ab-card"><div class="ab-img" style="background-image:url('img/dimsum.png')"></div><h4>一笼点心</h4><p>竹蒸笼里摆齐虾饺、烧卖、叉烧包与肠粉，是广式早茶的标准开场。</p></div>
+        <div class="ab-card"><div class="ab-img" style="background-image:url('img/street.png')"></div><h4>骑楼街景</h4><p>廊柱下摆开圆桌，榕树影里一盅两件，这才是广州的早晨。</p></div>
+        <div class="ab-card"><div class="ab-img" style="background-image:url('img/brew.png')"></div><h4>揭盖冲茶</h4><p>滚水高冲，盖碗一揭，茶香先人一步飘满全桌。</p></div>
+      </div>
+    </div>
+    <div class="album-dots" id="albumDots"><i class="on"></i><i></i><i></i></div>
+    <div class="page-tag">P8</div>
+  </section>
+
+  <!-- ============ P9 饮茶规矩 ============ -->
+  <section class="page page-rules" data-page="9">
+    <div class="page-head">
+      <h2>饮茶规矩</h2>
+      <p>点击小问号，看老广的饮茶暗号</p>
+    </div>
+    <div class="rules-list">
+      <div class="rl-item"><i class="rl-q">?</i><div><b>叩手礼</b><p>别人倒茶时，食指中指轻叩桌面，是「多谢」的暗号。</p></div></div>
+      <div class="rl-item"><i class="rl-q">?</i><div><b>揭盖加水</b><p>想加水就把茶壶盖斜斜揭开，伙计就懂了。</p></div></div>
+      <div class="rl-item"><i class="rl-q">?</i><div><b>先客后主</b><p>斟茶先人后己，第一杯一定留给客人。</p></div></div>
+      <div class="rl-item"><i class="rl-q">?</i><div><b>茶满欺人</b><p>茶七分满，留三分人情。</p></div></div>
+    </div>
+    <div class="page-tag">P9</div>
+  </section>
+
+  <!-- ============ P10 街坊茶楼 ============ -->
+  <section class="page page-street" data-page="10">
+    <div class="street-bg"></div>
+    <div class="street-text">
+      <h2>街坊的茶楼</h2>
+      <p>它不必是网红店。<br>一张圆桌、一壶普洱、几个老友，<br>就是广州人最自在的客厅。</p>
+    </div>
+    <div class="page-tag">P10</div>
+  </section>
+
+  <!-- ============ P11 价格 ============ -->
+  <section class="page page-price" data-page="11">
+    <div class="page-head">
+      <h2>一餐多少钱</h2>
+      <p>广州早茶，丰俭由人</p>
+    </div>
+    <div class="price-bars">
+      <div class="pb-row"><span>街坊大排档</span><div class="pb-bar"><i style="width:38%"></i></div><b>¥30</b></div>
+      <div class="pb-row"><span>老字号茶楼</span><div class="pb-bar"><i style="width:62%"></i></div><b>¥60</b></div>
+      <div class="pb-row"><span>星级酒楼</span><div class="pb-bar"><i style="width:88%"></i></div><b>¥120</b></div>
+      <div class="pb-row"><span>人均花销</span><div class="pb-bar"><i style="width:55%" class="hl"></i></div><b>¥50</b></div>
+    </div>
+    <p class="price-note">一盅两件，几十块就能叹个上午。</p>
+    <div class="page-tag">P11</div>
+  </section>
+
+  <!-- ============ P12 食在广州 ============ -->
+  <section class="page page-city" data-page="12">
+    <div class="city-bg parallax" data-depth="0.05"></div>
+    <div class="city-text">
+      <h2>食在广州</h2>
+      <p>广州不是一座把吃当任务的城。<br>它是把吃饭过成日子的城——<br>从早茶开始，一日四餐都不敷衍。</p>
+    </div>
+    <div class="page-tag">P12</div>
+  </section>
+
+  <!-- ============ P13 打卡盖章 ============ -->
+  <section class="page page-stamp" data-page="13">
+    <div class="page-head">
+      <h2>盖个章，留个念</h2>
+      <p>点一下印章，把这次漫游盖下来</p>
+    </div>
+    <div class="stamp-pad">
+      <div class="stamp-mark" id="stampMark">
+        <div class="sm-inner">
+          <b>广州</b>
+          <span>一盅两件</span>
+          <em id="stampDate">2026.10</em>
+        </div>
+      </div>
+      <div class="stamp-press" id="stampPress">盖章</div>
+    </div>
+    <div class="page-tag">P13</div>
+  </section>
+
+  <!-- ============ P14 结语 ============ -->
+  <section class="page page-end" data-page="14">
+    <div class="end-bg"></div>
+    <div class="end-text">
+      <h2>茶要趁热饮</h2>
+      <p>早茶从来不只是吃点心。<br>它是广州人留给自己的慢——<br>一盅两件，坐定，倾计，日头正好。</p>
+    </div>
+    <div class="page-tag">P14</div>
+  </section>
+
+  <!-- ============ P15 分享卡片 ============ -->
+  <section class="page page-share" data-page="15">
+    <div class="page-head">
+      <h2>带走这张卡</h2>
+      <p>生成你的漫游卡片，分享给想约饮茶的人</p>
+    </div>
+    <div class="share-card" id="shareCard">
+      <div class="sc-bg"></div>
+      <div class="sc-brand">一盅两件</div>
+      <div class="sc-title">广州早茶漫游指南</div>
+      <div class="sc-line"></div>
+      <div class="sc-stamp" id="scStamp">广</div>
+      <div class="sc-foot">
+        <span id="scName">你的名字</span>
+        <em id="scDate">2026.10.19</em>
+      </div>
+    </div>
+    <div class="share-actions">
+      <input type="text" id="scInput" placeholder="输入你的名字" maxlength="8">
+      <button class="btn-primary" id="scBtn">生成我的卡片</button>
+      <button class="btn-ghost" id="scDown">保存图片</button>
+    </div>
+    <div class="page-tag">P15</div>
+  </section>
+
+  <!-- 弹层：点心详情 -->
+  <div class="modal" id="modal">
+    <div class="modal-inner">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-emoji" id="modalEmoji">🥟</div>
+      <h3 id="modalTitle">虾饺</h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <!-- 翻页指示 -->
+  <div class="pager" id="pager"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
